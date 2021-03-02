@@ -1,0 +1,6 @@
+# Ignore:
+.mdx-data
+.next
+.vercel
+.vscode
+node_modules
