@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 module.exports = {
   env: {
     browser: true,
@@ -5,7 +6,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['plugin:prettier/recommended'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: { jsx: true },
