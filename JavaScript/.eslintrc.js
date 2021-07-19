@@ -1,18 +1,35 @@
 /* eslint-disable sort-keys */
 module.exports = {
+  root: true,
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: 2020,
+    requireConfigFile: false,
+    sourceType: 'module',
+  },
+  plugins: ['jsx-a11y', 'react', 'react-hooks', 'simple-import-sort', 'html', 'import', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+  ],
   env: {
+    amd: true,
     browser: true,
     commonjs: true,
     es6: true,
     node: true,
   },
-  extends: ['plugin:prettier/recommended'],
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaFeatures: { jsx: true },
-    ecmaVersion: 2020,
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
-  plugins: ['jsx-a11y', 'prettier', 'react', 'react-hooks', 'simple-import-sort', 'html', 'import'],
   rules: {
     // base
     camelcase: 0,
@@ -44,7 +61,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.js', 'jsx'],
+        extensions: ['.js', '.jsx'],
       },
     ],
     'react/jsx-no-comment-textnodes': 0,
@@ -58,10 +75,5 @@ module.exports = {
     // simple-import-sort
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
   },
 };
